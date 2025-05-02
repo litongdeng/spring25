@@ -1,5 +1,3 @@
-// DropZone.js
-
 import React from 'react';
 import { useDrop } from 'react-dnd';
 
@@ -18,6 +16,7 @@ const DropZone = ({ onDrop }) => {
             style={{
                 border: `1px dashed ${isOver ? 'green' : 'black'}`,
                 padding: '10px',
+                fontFamily: "Inter"
             }}>
             Drop here
         </div>

@@ -1,5 +1,3 @@
-//App.js
-
 //make it look nice
 //remove items from event bank
 //fix box sizes
@@ -97,7 +95,8 @@ const App = () => {
                         display: 'flex',
                         justifyContent: 'space-around',
                         flexDirection: "column",
-                        gap: "10px" 
+                        gap: "10px", 
+                        fontFamily: "Inter"
                     }}>
                         <div style={{
                             border: '1px solid #ccc',
@@ -107,7 +106,8 @@ const App = () => {
                             flexDirection: 'row',
                             gap: '10px',        // space between items
                             alignItems: 'center', // vertical centering
-                            flexWrap: 'wrap'
+                            flexWrap: 'wrap',
+                            fontFamily: "Inter"
                         }}>
                             <h2>Event Bank</h2>
                             {items.map((item, index) => (
@@ -122,7 +122,8 @@ const App = () => {
                             flexDirection: 'row',
                             gap: '10px',        // space between items
                             alignItems: 'center', // vertical centering
-                            flexWrap: 'wrap'
+                            flexWrap: 'wrap',
+                            fontFamily: "Inter"
                         }}>
                             <h2>Timeline</h2>
 
@@ -142,9 +143,10 @@ const App = () => {
                                                 display: 'flex',
                                                 justifyContent: 'space-between',
                                                 alignItems: 'center',
+                                                fontFamily: "Inter"
                                             }}>
                                             <p>{item.name}</p>
-                                            <button onClick={
+                                            <button style={{fontFamily: "Inter"}} onClick={
                                                 () => handleRemoveItem(index)}>
                                                 Remove
                                             </button>
