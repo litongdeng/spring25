@@ -2,6 +2,7 @@
 
 //make it look nice
 //remove items from event bank
+//fix box sizes
 
 import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
@@ -28,8 +29,6 @@ function shuffle(array) {
     }
     return array;
 }
-
-
 
 
 
@@ -81,6 +80,8 @@ const App = () => {
         <DndProvider backend={HTML5Backend}>
             <div style={{
                 display: 'flex',
+                // flexDirection: "column",
+                gap: '20px',
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh'
@@ -94,11 +95,19 @@ const App = () => {
                     <h1>Flashback :D</h1>
                     <div style={{
                         display: 'flex',
-                        justifyContent: 'space-around'
+                        justifyContent: 'space-around',
+                        flexDirection: "column",
+                        gap: "10px" 
                     }}>
                         <div style={{
                             border: '1px solid #ccc',
-                            padding: '10px', borderRadius: '5px'
+                            padding: '10px', 
+                            borderRadius: '5px',
+                            display: 'flex',
+                            flexDirection: 'row',
+                            gap: '10px',        // space between items
+                            alignItems: 'center', // vertical centering
+                            flexWrap: 'wrap'
                         }}>
                             <h2>Event Bank</h2>
                             {items.map((item, index) => (
@@ -107,7 +116,13 @@ const App = () => {
                         </div>
                         <div style={{
                             border: '1px solid #ccc',
-                            padding: '10px', borderRadius: '5px'
+                            padding: '10px', 
+                            borderRadius: '5px', 
+                            display: 'flex',
+                            flexDirection: 'row',
+                            gap: '10px',        // space between items
+                            alignItems: 'center', // vertical centering
+                            flexWrap: 'wrap'
                         }}>
                             <h2>Timeline</h2>
 
@@ -135,9 +150,6 @@ const App = () => {
                                             </button>
                                         </div>
                                     )))}
-
-
-
                         </div>
                     </div>
                 </div>
