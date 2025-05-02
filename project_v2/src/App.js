@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import DragItem from './DragItem';
+import './index.css';
 import DropZone from './DropZone';
 import { useWindowSize } from 'react-use';
 import Confetti from 'react-confetti';
@@ -34,7 +35,20 @@ const App = () => {
     const nullArray = Array(itemCount).fill(null);
     const [droppedItems, setDroppedItems] = useState(nullArray);
     const correct = useState(nullArray);
-    const correctNames = ["1", "2", "3", "4", "5"];
+    // const correctNames = ["1", "2", "3", "4", "5"];
+    const correctNames = ["Cal is founded as the first UC System school",
+        "the University of California moves its location to Berkeley",
+        "First Big Game",
+        "Free Speech Movement",
+        "Jennifer Doudna wins the Nobel Prize in Chemistry"];
+
+    /* 
+1868 - Cal is founded as first UC
+1873 - move to Berkeley
+1892 - first big game
+1964 - FSM
+2020 - doudna
+*/
     for (let i = 0; i < correctNames.length; i++) {
         correct[i] = <DragItem name={correctNames[i]} />
     }
@@ -57,7 +71,6 @@ const App = () => {
     }
 
     const [items, setItems] = useState(shuffle([...correct]));
-    // shuffle(items);
 
     const handleDrop = (item, pos) => {
         // setDroppedItems((prevItems) => [...prevItems, item]); OG CODE
@@ -88,26 +101,33 @@ const App = () => {
                     border: '1px solid #ccc',
                     padding: '20px',
                     borderRadius: '5px',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    flex: 1
                 }}>
                     <h1>Flashback :D</h1>
                     <div style={{
                         display: 'flex',
                         justifyContent: 'space-around',
                         flexDirection: "column",
-                        gap: "10px", 
+                        gap: "10px",
                         fontFamily: "Inter"
                     }}>
                         <div style={{
                             border: '1px solid #ccc',
-                            padding: '10px', 
+                            padding: '10px',
                             borderRadius: '5px',
                             display: 'flex',
                             flexDirection: 'row',
                             gap: '10px',        // space between items
                             alignItems: 'center', // vertical centering
                             flexWrap: 'wrap',
-                            fontFamily: "Inter"
+                            fontFamily: "Inter",
+                            flex: 1,
+                            width: '100%',
+                            maxWidth: '1200px',
+                            justifyContent: 'center',
+                            margin: '0 auto'
+                            // alignItems: 'center'
                         }}>
                             <h2>Event Bank</h2>
                             {items.map((item, index) => (
@@ -116,14 +136,19 @@ const App = () => {
                         </div>
                         <div style={{
                             border: '1px solid #ccc',
-                            padding: '10px', 
-                            borderRadius: '5px', 
+                            padding: '10px',
+                            borderRadius: '5px',
                             display: 'flex',
                             flexDirection: 'row',
                             gap: '10px',        // space between items
                             alignItems: 'center', // vertical centering
                             flexWrap: 'wrap',
-                            fontFamily: "Inter"
+                            fontFamily: "Inter",
+                            flex: 1,
+                            width: '100%',
+                            maxWidth: '1200px',
+                            justifyContent: 'center',
+                            margin: '0 auto'
                         }}>
                             <h2>Timeline</h2>
 
@@ -142,11 +167,12 @@ const App = () => {
                                                 backgroundColor: 'lavender',
                                                 display: 'flex',
                                                 justifyContent: 'space-between',
+                                                justifyContent: 'center',
                                                 alignItems: 'center',
                                                 fontFamily: "Inter"
                                             }}>
                                             <p>{item.name}</p>
-                                            <button style={{fontFamily: "Inter"}} onClick={
+                                            <button style={{ fontFamily: "Inter" }} onClick={
                                                 () => handleRemoveItem(index)}>
                                                 Remove
                                             </button>
