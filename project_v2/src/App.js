@@ -41,6 +41,7 @@ const App = () => {
         "First Big Game",
         "Free Speech Movement",
         "Jennifer Doudna wins the Nobel Prize in Chemistry"];
+    const droppedNames = [];
 
     /* 
 1868 - Cal is founded as first UC
@@ -54,7 +55,7 @@ const App = () => {
     }
 
     function checkTimeline() {
-        const droppedNames = [];
+        
         for (let i = 0; i < droppedItems.length; i++) {
             if (droppedItems[i] != null) {
                 droppedNames[i] = droppedItems[i].name;
