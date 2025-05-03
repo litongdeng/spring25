@@ -74,9 +74,6 @@ const App = () => {
 
     const handleDrop = (item, pos) => {
         // setDroppedItems((prevItems) => [...prevItems, item]); OG CODE
-        console.log("Dropped")
-        console.log(item)
-        console.log(pos)
         setDroppedItems((prevItems) => [...prevItems.slice(0, pos), item, ...prevItems.slice(pos + 1, prevItems.length)]);
     };
 
